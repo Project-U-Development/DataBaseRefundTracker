@@ -21,6 +21,7 @@ docker build -t mysql_db .
 docker images
 ```
  RESULT (output) of the command should contain column ***REPOSITORY*** with value ***mysql_db*** (it is GOOD result)
+ 
 7. To start docker container run command:
 ```
 docker run  --name=mysql_container mysql_db
