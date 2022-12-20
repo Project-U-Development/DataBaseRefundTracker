@@ -4,7 +4,10 @@ To start test MySQL database in docker container do next steps:
 
 1. Install Docker for Windows ***https://docs.docker.com/desktop/install/windows-install/*** for Mac ***https://docs.docker.com/desktop/install/mac-install/***
 2. Open terminal
-3. Clone repository DataBaseRefundTracker ***"git clone https://github.com/Project-U-Development/DataBaseRefundTracker.git"***
+3. Clone repository DataBaseRefundTracker 
+```
+git clone https://github.com/Project-U-Development/DataBaseRefundTracker.git
+```
 4. Move to DataBaseRefundTracker folder using cd command: 
     ***"cd DataBaseRefundTracker"***
 5. To create docker image run command:
