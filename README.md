@@ -23,9 +23,9 @@ docker images
  RESULT (output) of the command should contain column ***REPOSITORY*** with value ***mysql_db*** (it is GOOD result)
 7. To start docker container run command:
 ```
-docker run  --name=mysql_container -d mysql_db
+docker run  --name=mysql_container mysql_db
 ```
-8. To check if container started successfully run command:
+8. To check if container started successfully run command in new terminal:
 ```
 docker ps
 ```
