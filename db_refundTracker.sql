@@ -6,7 +6,6 @@ user_mail VARCHAR(40),
 user_password VARCHAR(30)
 );
 INSERT INTO users VALUES ('1', 'mail1@example.com', 'password1');
-DESCRIBE RefundTracker.users;
 INSERT INTO users VALUES ('2', 'mail2@example.com', 'password2');
 INSERT INTO users VALUES ('3', 'mail3@example.com', 'password3');
 INSERT INTO users VALUES ('4', 'mail4@example.com', 'password4');
