@@ -1,5 +1,4 @@
-*****
-commands are in "", please copy commands to commandline without ""
+*****commands are in "", please copy commands to commandline without ""
 
 To start test MySQL database in docker container do next steps:
 
