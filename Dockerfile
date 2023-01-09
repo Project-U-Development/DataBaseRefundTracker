@@ -4,4 +4,4 @@ ENV MYSQL_DATABASE db_refundTracker
 ENV MYSQL_USER userServer
 ENV MYSQL_PASSWORD 1234567
 ADD ./db_refundTracker.sql /docker-entrypoint-initdb.d/
-EXPOSE 33060
+EXPOSE 3306
