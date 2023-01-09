@@ -24,7 +24,7 @@ docker images
  
 7. To start docker container run command:
 ```
-docker run  --name=mysql_container mysql_db
+docker run -p 3306:3306 --rm --name=mysql_container mysql_db
 ```
 8. To check if container started successfully run command in new terminal:
 ```
