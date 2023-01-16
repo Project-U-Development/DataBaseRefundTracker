@@ -1,9 +1,9 @@
 SHOW DATABASES;
 USE db_refundTracker;
 CREATE TABLE users (
-user_id VARCHAR(40), PRIMARY KEY, 
+user_id VARCHAR(50), PRIMARY KEY, 
 user_mail VARCHAR(40), 
-user_password VARCHAR(30)
+user_password VARCHAR(75)
 );
 INSERT INTO users VALUES ('1', 'mail1@example.com', 'password1');
 INSERT INTO users VALUES ('2', 'mail2@example.com', 'password2');
@@ -22,7 +22,7 @@ debtor VARCHAR(40),
 amount$ DECIMAL(10,2), 
 currency VARCHAR(5), 
 due_date DATE, 
-user_id VARCHAR(40), 
+user_id VARCHAR(50), 
 if_completed BOOLEAN, 
 FOREIGN  KEY (user_id) REFERENCES users(user_id)
 );
