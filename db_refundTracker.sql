@@ -23,7 +23,7 @@ amount$ DECIMAL(10,2),
 currency VARCHAR(3), 
 due_date DATE, 
 user_id VARCHAR(50) NOT NULL, 
-if_completed ENUM('yes', 'no', 'deleted'), 
+if_completed ENUM('yes', 'no', 'deleted') COMMENT 'For a column that has only a limited set of possible values like "yes", "no" and "in process" in your case, you can use an enumerated data type called ENUM. The ENUM data type is also case-sensitive, so 'yes' is different from 'Yes' or 'YES' etc.', 
 FOREIGN  KEY (user_id) REFERENCES users(user_id)
 );
 CREATE TABLE reminder (
