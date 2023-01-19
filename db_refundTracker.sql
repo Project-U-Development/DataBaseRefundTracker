@@ -2,8 +2,8 @@ SHOW DATABASES;
 USE db_refundTracker;
 CREATE TABLE users (
 user_id VARCHAR(50), PRIMARY KEY, 
-user_mail VARCHAR(40), 
-user_password VARCHAR(75)
+user_mail VARCHAR(50) UNIQUE NOT NULL, 
+user_password VARCHAR(90) NOT NULL
 );
 INSERT INTO users VALUES ('1', 'mail1@example.com', 'password1');
 INSERT INTO users VALUES ('2', 'mail2@example.com', 'password2');
@@ -15,19 +15,19 @@ INSERT INTO users VALUES ('7', 'mail7@example.com', 'password7');
 INSERT INTO users VALUES ('8', 'mail8@example.com', 'password8');
 INSERT INTO users VALUES ('9', 'mail9@example.com', 'password9');
 CREATE TABLE refunds (
-refund_id INT PRIMARY KEY, 
+refund_id VARCHAR(50), PRIMARY KEY, , 
 creation_time DATETIME, 
-product_name VARCHAR(40), 
-debtor VARCHAR(40), 
+product_name VARCHAR(128), 
+debtor VARCHAR(128), 
 amount$ DECIMAL(10,2), 
-currency VARCHAR(5), 
+currency VARCHAR(3), 
 due_date DATE, 
-user_id VARCHAR(50), 
+user_id VARCHAR(50) NOT NULL, 
 if_completed BOOLEAN, 
 FOREIGN  KEY (user_id) REFERENCES users(user_id)
 );
 CREATE TABLE reminder (
-reminder_id INT PRIMARY KEY,
+reminder_id VARCHAR(50), PRIMARY KEY,
 reminder_type VARCHAR (7),
 frequency INT,
 time_unit VARCHAR (10),
