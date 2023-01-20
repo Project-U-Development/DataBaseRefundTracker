@@ -1,7 +1,7 @@
 SHOW DATABASES;
 USE db_refundTracker;
 CREATE TABLE users (
-user_id VARCHAR(50), PRIMARY KEY, 
+user_id VARCHAR(50) PRIMARY KEY, 
 user_mail VARCHAR(50) UNIQUE NOT NULL, 
 user_password VARCHAR(90) NOT NULL
 );
@@ -15,23 +15,23 @@ INSERT INTO users VALUES ('7', 'mail7@example.com', 'password7');
 INSERT INTO users VALUES ('8', 'mail8@example.com', 'password8');
 INSERT INTO users VALUES ('9', 'mail9@example.com', 'password9');
 CREATE TABLE refunds (
-refund_id VARCHAR(50), PRIMARY KEY, , 
-creation_time DATETIME, 
-product_name VARCHAR(128), 
-debtor VARCHAR(128), 
-amount$ DECIMAL(10,2), 
+refund_id VARCHAR(50) PRIMARY KEY,
+creation_time DATETIME,
+product_name VARCHAR(128),
+debtor VARCHAR(128),
+amount$ DECIMAL(10,2),
 currency ENUM('USD', 'EUR', 'GBP','UAH'), 
 due_date DATE, 
 user_id VARCHAR(50) NOT NULL, 
-if_completed ENUM('yes', 'no', 'deleted') COMMENT 'For a column that has only a limited set of possible values like "yes", "no" and "in process" in your case, you can use an enumerated data type called ENUM. The ENUM data type is also case-sensitive, so 'yes' is different from 'Yes' or 'YES' etc.', 
+if_completed ENUM('yes', 'no', 'deleted'),
 FOREIGN  KEY (user_id) REFERENCES users(user_id)
 );
 CREATE TABLE reminder (
-reminder_id VARCHAR(50), PRIMARY KEY,
+reminder_id VARCHAR(50) PRIMARY KEY,
 reminder_type ENUM('each', 'every'),
 frequency INT,
 time_unit ENUM('week', 'weeks', 'day', 'days'),
-refund_id INT,
+refund_id VARCHAR(50),
 FOREIGN KEY (refund_id) REFERENCES refunds (refund_id)
 );
 DESCRIBE reminder;
@@ -40,7 +40,7 @@ INSERT INTO refunds VALUES (1, '2022-01-01 12:47:53', 'shoes', 'Nike', 20.99, 'E
 INSERT INTO refunds VALUES (2, '2022-01-02 23:59:59', 'dress', 'Dresscompany', 17.50, 'USD', '2024-05-02', '1', 'no');
 INSERT INTO refunds VALUES (3, '2022-01-03 09:12:05', 'socks', 'madeByMom', 7.45, 'GBP', '2024-09-03', '2', 'no');
 INSERT INTO refunds VALUES (4, '2022-01-04 13:08:27', 'bedlinen', 'SleepNice', 75.80, 'UAH', '2024-06-17','6', 'no');
-INSERT INTO refunds VALUES (5, '2022-02-19 14:15:08', 'mobile', 'Apple', 1299.90, 'USD', '2024-03-23', '1', 0);
+INSERT INTO refunds VALUES (5, '2022-02-19 14:15:08', 'mobile', 'Apple', 1299.90, 'USD', '2024-03-23', '1', 'no');
 INSERT INTO refunds VALUES (6, '2022-03-26 15:37:41', 'flightMadrid', 'Wizzair', 578.20, 'EUR', '2024-04-23', '5', 'no');
 INSERT INTO refunds VALUES (7, '2022-03-28 16:41:23', 'hummer', 'KitchenCo', 255.90, 'GBP', '2024-07-15', '4', 'no');
 INSERT INTO refunds VALUES (8, '2022-06-10 17:03:19', 'pillow', 'SleepNice', 45.20, 'EUR', '2024-02-13', '7', 'no');
