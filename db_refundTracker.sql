@@ -40,7 +40,7 @@ INSERT INTO refunds VALUES (1, '2022-01-01 12:47:53', 'shoes', 'Nike', 20.99, 'E
 INSERT INTO refunds VALUES (2, '2022-01-02 23:59:59', 'dress', 'Dresscompany', 17.50, 'USD', '2024-05-02', '1', 'no');
 INSERT INTO refunds VALUES (3, '2022-01-03 09:12:05', 'socks', 'madeByMom', 7.45, 'GBP', '2024-09-03', '2', 'no');
 INSERT INTO refunds VALUES (4, '2022-01-04 13:08:27', 'bedlinen', 'SleepNice', 75.80, 'UAH', '2024-06-17','6', 'no');
-INSERT INTO refunds VALUES (5, '2022-02-19 14:15:08', 'mobile', 'Apple', 1299.90, 'USD', '2024-03-23', '1', 0);
+INSERT INTO refunds VALUES (5, '2022-02-19 14:15:08', 'mobile', 'Apple', 1299.90, 'USD', '2024-03-23', '1', 'no');
 INSERT INTO refunds VALUES (6, '2022-03-26 15:37:41', 'flightMadrid', 'Wizzair', 578.20, 'EUR', '2024-04-23', '5', 'no');
 INSERT INTO refunds VALUES (7, '2022-03-28 16:41:23', 'hummer', 'KitchenCo', 255.90, 'GBP', '2024-07-15', '4', 'no');
 INSERT INTO refunds VALUES (8, '2022-06-10 17:03:19', 'pillow', 'SleepNice', 45.20, 'EUR', '2024-02-13', '7', 'no');
