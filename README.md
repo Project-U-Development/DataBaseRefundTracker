@@ -37,5 +37,16 @@ docker ps
 docker run -d --name my-mysql-container -v my-db-data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=password -p 3306:3306 mysql
 ```
 Here, the -d option runs the container in the background, --name specifies the name of the container, -v mounts the my-db-data volume to the /var/lib/mysql directory inside the container, -e sets the MYSQL_ROOT_PASSWORD environment variable, and -p maps the host's port 3306 to the container's port 3306. The last argument specifies the name of the MySQL image to use.
+ 10. As alternative variant of saving new Data, you can commit changes made to a running MySQL Docker container to a new image. run the following command:
+ ```
+docker commit my-mysql my-mysql-image:latest
+```
+You can now run a new container from the updated image with your changes:
+```
+docker run --name my-mysql -e MYSQL_ROOT_PASSWORD=secret -d my-mysql-image:latest
+
+```
+
+
 
 general info about Docker - https://badtry.net/docker-tutorial-dlia-novichkov-rassmatrivaiem-docker-tak-iesli-by-on-byl-ighrovoi-pristavkoi/amp/
