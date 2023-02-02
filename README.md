@@ -31,5 +31,10 @@ docker run -p 3306:3306 --rm --name=mysql_container mysql_db
 docker ps
 ```
  RESULT (output) of the command should contain line with ***NAME = mysql_container***  (it is GOOD result)
+ 9. If you want to save new Data to the database you can use VOLUME:To use the created volume in a Docker container using the bash command line, run the following command:
+```
+docker run -d --name my-mysql-container -v my-db-data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=password -p 3306:3306 mysql
+```
+Here, the -d option runs the container in the background, --name specifies the name of the container, -v mounts the my-db-data volume to the /var/lib/mysql directory inside the container, -e sets the MYSQL_ROOT_PASSWORD environment variable, and -p maps the host's port 3306 to the container's port 3306. The last argument specifies the name of the MySQL image to use.
 
 general info about Docker - https://badtry.net/docker-tutorial-dlia-novichkov-rassmatrivaiem-docker-tak-iesli-by-on-byl-ighrovoi-pristavkoi/amp/
