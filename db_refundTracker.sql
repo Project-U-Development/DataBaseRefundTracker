@@ -3,23 +3,24 @@ USE db_refundTracker;
 CREATE TABLE users (
 user_id VARCHAR(50) PRIMARY KEY, 
 user_mail VARCHAR(50) UNIQUE NOT NULL, 
-user_password VARCHAR(90) NOT NULL
+user_password VARCHAR(90) NOT NULL,
+verified_mail BOOLEAN NOT NULL DEFAULT 0
 );
-INSERT INTO users VALUES ('1', 'mail1@example.com', 'password1');
-INSERT INTO users VALUES ('2', 'mail2@example.com', 'password2');
-INSERT INTO users VALUES ('3', 'mail3@example.com', 'password3');
-INSERT INTO users VALUES ('4', 'mail4@example.com', 'password4');
-INSERT INTO users VALUES ('5', 'mail5@example.com', 'password5');
-INSERT INTO users VALUES ('6', 'mail6@example.com', 'password6');
-INSERT INTO users VALUES ('7', 'mail7@example.com', 'password7');
-INSERT INTO users VALUES ('8', 'mail8@example.com', 'password8');
-INSERT INTO users VALUES ('9', 'mail9@example.com', 'password9');
+INSERT INTO users VALUES ('1', 'mail1@example.com', 'password1', true);
+INSERT INTO users VALUES ('2', 'mail2@example.com', 'password2', true);
+INSERT INTO users VALUES ('3', 'mail3@example.com', 'password3', true);
+INSERT INTO users VALUES ('4', 'mail4@example.com', 'password4', true);
+INSERT INTO users VALUES ('5', 'mail5@example.com', 'password5', true);
+INSERT INTO users VALUES ('6', 'mail6@example.com', 'password6', true);
+INSERT INTO users VALUES ('7', 'mail7@example.com', 'password7', true);
+INSERT INTO users VALUES ('8', 'mail8@example.com', 'password8', true);
+INSERT INTO users VALUES ('9', 'mail9@example.com', 'password9', false);
 CREATE TABLE refunds (
 refund_id VARCHAR(50) PRIMARY KEY,
 creation_time DATETIME,
-product_name VARCHAR(128),
-debtor VARCHAR(128),
-amount$ DECIMAL(10,2),
+product_name VARCHAR(128) NOT NULL,
+debtor VARCHAR(128) NOT NULL,
+amount$ DECIMAL(10,2) NOT NULL,
 currency ENUM('USD', 'EUR', 'GBP','UAH'), 
 due_date DATE, 
 user_id VARCHAR(50) NOT NULL, 
