@@ -4,7 +4,8 @@ CREATE TABLE users (
 user_id VARCHAR(50) PRIMARY KEY, 
 user_mail VARCHAR(50) UNIQUE NOT NULL, 
 user_password VARCHAR(90) NOT NULL,
-verified_mail BOOLEAN NOT NULL DEFAULT 0
+verified_mail BOOLEAN NOT NULL DEFAULT 0,
+user_reset_password_code VARCHAR(90) DEFAULT 0 
 );
 INSERT INTO users VALUES ('1', 'mail1@example.com', 'password1', true);
 INSERT INTO users VALUES ('2', 'mail2@example.com', 'password2', true);
