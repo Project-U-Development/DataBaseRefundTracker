@@ -5,17 +5,17 @@ user_id VARCHAR(50) PRIMARY KEY,
 user_mail VARCHAR(50) UNIQUE NOT NULL, 
 user_password VARCHAR(90) NOT NULL,
 verified_mail BOOLEAN NOT NULL DEFAULT 0,
-user_reset_password_code VARCHAR(90) DEFAULT 0 
+user_reset_password_code VARCHAR(90) NOT NULL DEFAULT '0' 
 );
-INSERT INTO users VALUES ('1', 'mail1@example.com', 'password1', true);
-INSERT INTO users VALUES ('2', 'mail2@example.com', 'password2', true);
-INSERT INTO users VALUES ('3', 'mail3@example.com', 'password3', true);
-INSERT INTO users VALUES ('4', 'mail4@example.com', 'password4', true);
-INSERT INTO users VALUES ('5', 'mail5@example.com', 'password5', true);
-INSERT INTO users VALUES ('6', 'mail6@example.com', 'password6', true);
-INSERT INTO users VALUES ('7', 'mail7@example.com', 'password7', true);
-INSERT INTO users VALUES ('8', 'mail8@example.com', 'password8', true);
-INSERT INTO users VALUES ('9', 'mail9@example.com', 'password9', false);
+INSERT INTO users VALUES ('1', 'mail1@example.com', 'password1', true, '0');
+INSERT INTO users VALUES ('2', 'mail2@example.com', 'password2', true, '0');
+INSERT INTO users VALUES ('3', 'mail3@example.com', 'password3', true, '0');
+INSERT INTO users VALUES ('4', 'mail4@example.com', 'password4', true, '0');
+INSERT INTO users VALUES ('5', 'mail5@example.com', 'password5', true, '0');
+INSERT INTO users VALUES ('6', 'mail6@example.com', 'password6', true, '0');
+INSERT INTO users VALUES ('7', 'mail7@example.com', 'password7', true, '0');
+INSERT INTO users VALUES ('8', 'mail8@example.com', 'password8', true, '0');
+INSERT INTO users VALUES ('9', 'mail9@example.com', 'password9', false, '0');
 CREATE TABLE refunds (
 refund_id VARCHAR(50) PRIMARY KEY,
 creation_time DATETIME,
