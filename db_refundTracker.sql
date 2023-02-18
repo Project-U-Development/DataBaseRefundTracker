@@ -29,11 +29,17 @@ if_completed ENUM('yes', 'no', 'deleted'),
 FOREIGN  KEY (user_id) REFERENCES users(user_id)
 );
 CREATE TABLE reminder (
-reminder_id VARCHAR(50) PRIMARY KEY,
+reminder_id VARCHAR(50) PRIMARY KEY, 
 reminder_type ENUM('each', 'every'),
 frequency INT,
 time_unit ENUM('week', 'weeks', 'day', 'days'),
 refund_id VARCHAR(50),
+FOREIGN KEY (refund_id) REFERENCES refunds (refund_id)
+);
+CREATE TABLE images (
+image_id VARCHAR(50) PRIMARY KEY, 
+object_key VARCHAR(200),
+bucket_id VARCHAR(200),
 FOREIGN KEY (refund_id) REFERENCES refunds (refund_id)
 );
 DESCRIBE reminder;
