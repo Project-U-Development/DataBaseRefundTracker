@@ -4,8 +4,7 @@ CREATE TABLE users (
   user_id VARCHAR(50) PRIMARY KEY, 
   user_mail VARCHAR(50) UNIQUE NOT NULL, 
   user_password VARCHAR(90) NOT NULL,
-  verified_mail BOOLEAN NOT NULL DEFAULT 0,
-  user_reset_password_code VARCHAR(90) NOT NULL DEFAULT '0'
+  verified_mail BOOLEAN NOT NULL DEFAULT 0
 );
 
 CREATE TABLE refunds (
