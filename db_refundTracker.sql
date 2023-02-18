@@ -21,9 +21,9 @@ FOREIGN  KEY (user_id) REFERENCES users(user_id)
 );
 CREATE TABLE reminder (
 reminder_id VARCHAR(50) PRIMARY KEY,
-reminder_type ENUM('each', 'every'),
+reminder_type ENUM('after', 'every'),
 frequency INT,
-time_unit ENUM('week', 'weeks', 'day', 'days'),
+time_unit ENUM('week', 'day'),
 refund_id VARCHAR(50),
 FOREIGN KEY (refund_id) REFERENCES refunds (refund_id)
 );
@@ -39,16 +39,16 @@ INSERT INTO refunds VALUES (7, '2022-03-28 16:41:23', 'hummer', 'KitchenCo', 255
 INSERT INTO refunds VALUES (8, '2022-06-10 17:03:19', 'pillow', 'SleepNice', 45.20, 'EUR', '2024-02-13', '7', 'no');
 INSERT INTO refunds VALUES (9, '2022-04-17 18:19:34', 'jacket', 'Jacketcompany', 85.99, 'USD', '2024-04-25','8', 'no');
 INSERT INTO refunds VALUES (10, '2022-04-09 19:47:29', 'jeans', 'Dresscompany', 34.00, 'UAH', '2024-05-16','9', 'no');
-INSERT INTO reminder VALUES (1, 'each', 2, 'days', 9);
+INSERT INTO reminder VALUES (1, 'after', 2, 'day', 9);
 INSERT INTO reminder VALUES (2, 'every', 1, 'week', 8);
-INSERT INTO reminder VALUES (3, 'every', 5, 'days', 7);
-INSERT INTO reminder VALUES (4, 'each', 3, 'weeks', 6);
-INSERT INTO reminder VALUES (5, 'each', 2, 'weeks', 5);
-INSERT INTO reminder VALUES (6, 'every', 6, 'days', 4);
-INSERT INTO reminder VALUES (7, 'each', 1, 'week', 3);
-INSERT INTO reminder VALUES (8, 'every', 12, 'days', 10);
-INSERT INTO reminder VALUES (9, 'each', 2, 'weeks', 2);
-INSERT INTO reminder VALUES (10, 'every', 4, 'days', 1);
+INSERT INTO reminder VALUES (3, 'every', 5, 'day', 7);
+INSERT INTO reminder VALUES (4, 'after', 3, 'week', 6);
+INSERT INTO reminder VALUES (5, 'after', 2, 'week', 5);
+INSERT INTO reminder VALUES (6, 'every', 6, 'day', 4);
+INSERT INTO reminder VALUES (7, 'after', 1, 'week', 3);
+INSERT INTO reminder VALUES (8, 'every', 12, 'day', 10);
+INSERT INTO reminder VALUES (9, 'after', 2, 'week', 2);
+INSERT INTO reminder VALUES (10, 'every', 4, 'day', 1);
 SELECT * FROM reminder;
 SELECT * FROM users;
 SELECT * FROM refunds;
