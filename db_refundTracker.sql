@@ -26,5 +26,5 @@ CREATE TABLE reminder (
   frequency INT,
   time_unit ENUM('week', 'day'),
   refund_id VARCHAR(50),
-  FOREIGN KEY (refund_id) REFERENCES refunds (refund_id)
+  FOREIGN KEY (refund_id) REFERENCES refunds (refund_id) ON DELETE CASCADE
 );
