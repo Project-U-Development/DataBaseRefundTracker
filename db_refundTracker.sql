@@ -22,7 +22,7 @@ CREATE TABLE refunds (
 
 CREATE TABLE reminder (
   reminder_id VARCHAR(50) PRIMARY KEY,
-  reminder_type ENUM('after', 'every'),
+  reminder_type ENUM('after', 'each'),
   frequency INT,
   time_unit ENUM('week', 'day'),
   refund_id VARCHAR(50),
