@@ -28,3 +28,9 @@ CREATE TABLE reminder (
   refund_id VARCHAR(50),
   FOREIGN KEY (refund_id) REFERENCES refunds (refund_id) ON DELETE CASCADE
 );
+
+CREATE TABLE images (
+image_id VARCHAR(50) PRIMARY KEY, 
+object_key VARCHAR(200),
+FOREIGN KEY (refund_id) REFERENCES refunds (refund_id) ON DELETE CASCADE
+);
